@@ -122,8 +122,8 @@ int main(int argc, char **argv){
             else{
                 fprintf(ofile, "%s\n", line[pointer]); 
             }
-            //free(nextline);
-            //free(nextindent);
+            free(nextline);
+            free(nextindent);
             step++;
         }
         //printf("\n");
