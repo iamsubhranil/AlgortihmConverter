@@ -62,7 +62,7 @@ static char *readnextVariable(FILE *fp){
 }
 
 static int isoperator(char c){
-    return c == '=' || c == '>' || c == '<' || c == '-' || c == '+' || c == '*' || c == '/' || c == '!';
+    return c == '=' || c == '>' || c == '<' || c == '-' || c == '+' || c == '*' || c == '/' || c == '!' || c == '%';
 }
 
 static char *readnextOperator(FILE *fp){
@@ -138,7 +138,7 @@ Token *tokenize(FILE *stream){
                 getc(stream);
             newline = 1;
             t->type = NEWLINE;
-            t->val = strdup("[NEWLINE]");
+            //t->val = strdup("[NEWLINE]");
         }
         else if(newline){
             t->type = KEYWORD;
